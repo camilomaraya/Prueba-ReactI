@@ -1,5 +1,5 @@
-
-const Navbar = () => {
+const Navbar = (Props) => {
+   
     return(
         <nav className="navbar navbar-dar bg-dark">    
             <div className="container">
@@ -13,6 +13,9 @@ const Navbar = () => {
                             className="form-control me-2"
                             type="text"
                             placeholder="Busca tu personaje favorito"
+                            onChange={(e)=>{
+                                Props.setBuscar(e.target.value);
+                            }}
                         />
                     </form>
                 </div>
