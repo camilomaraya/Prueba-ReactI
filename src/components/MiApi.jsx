@@ -4,9 +4,9 @@ const MiApi = (Props) => {
 
 const [personajes, setPersonajes] = useState([]);
 
-const initialUrl = "https://rickandmortyapi.com/api/character";
 
-const llamarPersonajes = async (url)=>{
+const llamarPersonajes = async ()=>{
+    const url = "https://rickandmortyapi.com/api/character";
     const response = await fetch(url);
     const data = await response.json()
     
@@ -15,7 +15,7 @@ const llamarPersonajes = async (url)=>{
 };
 
 useEffect(()=>{
-    llamarPersonajes(initialUrl);
+    llamarPersonajes();
     // console.log(llamarPersonajes);
   }, []);
 
